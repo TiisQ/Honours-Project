@@ -1,0 +1,3 @@
+Num_Array: 3
+Centre_Dist: 70,120,160
+Centre_Freq: 1.4e9

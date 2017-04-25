@@ -1,0 +1,4 @@
+HourAngleInterval: -6,6
+FieldCentreDecl: 65
+NumSources: 1
+SourceParams: 0.7,2,3
