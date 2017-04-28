@@ -1,4 +1,5 @@
 import numpy as np
+
 def getSParams(ArrayFile,FieldFile): ## must be strings
 	array= {}
 	field= {}
@@ -39,8 +40,8 @@ def formatSParams(ArrayFile,FieldFile,td): ## isn't there a way of declaring thi
 		
 	for i in range(SNum):
 		Amp.append(point_sources[i][0])
-		l.append(np.radians(point_sources[i][1]))
-		m.append(np.radians(point_sources[i][2]))
+		l.append(point_sources[i][1]) ## in degrees, must be changed to radians in script
+		m.append(point_sources[i][2])
 		
 	## baseline as a func of wavelength
 	## I need to save both b12 and b21 for completion of ellipse
@@ -53,9 +54,9 @@ def formatSParams(ArrayFile,FieldFile,td): ## isn't there a way of declaring thi
 	declrad= np.radians(declangle)
 
 	## determining uv co-ordinates for uv tracks
-	ut= [[bline[k][i]*np.cos(Ht) for i in range(ArNum)]for k in range(ArNum)]
-	vt= [[bline[k][i]*np.sin(Ht)*np.sin(declrad) for i in range(ArNum)]for k in range(ArNum)]
+	ut= np.array([[bline[k][i]*np.cos(Ht) for i in range(ArNum)]for k in range(ArNum)],dtype=np.float64)
+	vt= np.array([[bline[k][i]*np.sin(Ht)*np.sin(declrad) for i in range(ArNum)]for k in range(ArNum)],dtype=np.float64)
 		
-	return Amp,l,m,ut,vt,SNum,ArNum,arrayHxpos
+	return Amp,l,m,ut,vt,arrayHxpos
   
-            
+## maybe I could adapt this Amp,l,m to be the model parameters instead of them being vestigial

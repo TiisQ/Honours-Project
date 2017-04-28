@@ -1,0 +1,10 @@
+19 April
+------------------------------------------------------------------------------------------------------------------------------
+> I find that the 3-parameter case works much better when Amplitude is normalized or shrunk to a similar interval of values as the l and m value interval. 
+> So for this purpose, I convert it to radians too.
+
+
+28 April
+------------------------------------------------------------------------------------------------------------------------------
+> Trying out 4,5,6 and 7 baselines
+> Packing the functions in a package: ProjectFuncs.py importing as pf
