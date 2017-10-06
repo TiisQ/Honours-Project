@@ -45,7 +45,7 @@ def formatSParams(ArrayFile,FieldFile,td): ## isn't there a way of declaring thi
 		
 	## baseline as a func of wavelength
 	## I need to save both b12 and b21 for completion of ellipse
-	lamda= 3e8/freq
+	lamda= 3e8/freq #speed of light c=3e8 m/s; lamda is now in units of m
 	bline= [[(arrayHxpos[i]-arrayHxpos[k])/lamda for i in range(ArNum)]for k in range(ArNum)]
 
 	#setting up my (point source) field  
